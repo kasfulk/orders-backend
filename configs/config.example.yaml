@@ -1,0 +1,17 @@
+appName: OrderSystem
+environment: 
+apiVersion: v1
+server:
+  host: 0.0.0.0
+  port: 3005
+database:
+  # if you use docker, change this IP to your local IP (check with ipconfig in windows or ifconfix in *nix)
+  dbHost: postgresdb
+  # if not use docker use this setting
+  # dbHost: localhost
+  logLevel: 4
+  dbPort: 5432
+  username: postgres
+  password: password
+  dbName: database
+  schemaName: public
