@@ -4,6 +4,7 @@ go 1.21.1
 
 require (
 	github.com/gofiber/fiber/v2 v2.52.0
+	github.com/morkid/paginate v1.1.7
 	github.com/spf13/viper v1.18.2
 	gorm.io/driver/postgres v1.5.4
 	gorm.io/gen v0.3.25
@@ -29,7 +30,6 @@ require (
 	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/morkid/gocache v1.0.0 // indirect
-	github.com/morkid/paginate v1.1.7 // indirect
 	github.com/pelletier/go-toml/v2 v2.1.0 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect

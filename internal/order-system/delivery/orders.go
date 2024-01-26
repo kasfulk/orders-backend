@@ -14,28 +14,16 @@ type OrderHandler struct {
 	OrderUsecase domain.OrderUsecase
 }
 
-func NewOrderHandler(c fiber.Router, uc domain.OrderUsecase) {
-	handler := &OrderHandler{
-		OrderUsecase: uc,
-	}
-	g := c.Group("/orders")
-	g.Get("", handler.FetchAll)
-	g.Get("/:id", handler.FetchOneByID)
-	g.Post("", handler.Save)
-	g.Put("/:id", handler.Edit)
-	g.Delete("/:id", handler.SoftDelete)
-}
-
 func (o *OrderHandler) FetchAll(c *fiber.Ctx) error {
 	page, err := strconv.Atoi(c.Query("page"))
 	if err != nil {
-		return response.ReturnTheResponse(c, false, int(400), "Bad Request", nil)
+		return response.ReturnTheResponse(c, false, int(400), "Bad Request ?page= not found", nil)
 	}
 	size, err := strconv.Atoi(c.Query("size"))
 	if err != nil {
-		return response.ReturnTheResponse(c, false, int(400), "Bad Request", nil)
+		return response.ReturnTheResponse(c, false, int(400), "Bad Request ?size= not found", nil)
 	}
-	listOrders, rowLen, err := o.OrderUsecase.FetchAll(c, page, size)
+	listOrders, rowLen, err := o.OrderUsecase.FetchAll(c, page-1, size)
 	if rowLen <= 0 {
 		return response.ReturnTheResponse(c, true, int(404), "Record not Found", nil)
 	}

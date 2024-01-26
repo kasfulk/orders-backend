@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"github.com/kasfulk/orders-backend/api/handler"
 	"github.com/kasfulk/orders-backend/configs"
 
 	"github.com/gofiber/fiber/v2"
@@ -13,4 +14,7 @@ func RouteRegisterV1(app *fiber.App, config configs.Config) {
 	ver.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Hello, World 👋!")
 	})
+
+	handler.RegisterOrders(ver)
+
 }
