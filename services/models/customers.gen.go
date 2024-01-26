@@ -12,7 +12,7 @@ type Customer struct {
 	Login       *string `gorm:"column:login" json:"login"`
 	Password    *string `gorm:"column:password" json:"password"`
 	Name        *string `gorm:"column:name" json:"name"`
-	CompanyID   *string `gorm:"column:company_id" json:"company_id"`
+	CompanyID   *int64  `gorm:"column:company_id" json:"company_id"`
 	CreditCards *string `gorm:"column:credit_cards" json:"credit_cards"`
 }
 

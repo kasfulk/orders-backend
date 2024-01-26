@@ -8,8 +8,8 @@ const TableNameOrderItem = "order_items"
 
 // OrderItem mapped from table <order_items>
 type OrderItem struct {
-	ID           string  `gorm:"column:id;primaryKey" json:"id"`
-	OrderID      *string `gorm:"column:order_id" json:"order_id"`
+	ID           int64   `gorm:"column:id;primaryKey" json:"id"`
+	OrderID      *int64  `gorm:"column:order_id" json:"order_id"`
 	PricePerUnit *string `gorm:"column:price_per_unit" json:"price_per_unit"`
 	Quantity     *string `gorm:"column:quantity" json:"quantity"`
 	Product      *string `gorm:"column:product" json:"product"`

@@ -8,9 +8,9 @@ const TableNameDelivery = "deliveries"
 
 // Delivery mapped from table <deliveries>
 type Delivery struct {
-	ID                string  `gorm:"column:id;primaryKey" json:"id"`
-	OrderItemID       *string `gorm:"column:order_item_id" json:"order_item_id"`
-	DeliveredQuantity *string `gorm:"column:delivered_quantity" json:"delivered_quantity"`
+	ID                int64  `gorm:"column:id;primaryKey" json:"id"`
+	OrderItemID       *int64 `gorm:"column:order_item_id" json:"order_item_id"`
+	DeliveredQuantity *int64 `gorm:"column:delivered_quantity" json:"delivered_quantity"`
 }
 
 // TableName Delivery's table name
